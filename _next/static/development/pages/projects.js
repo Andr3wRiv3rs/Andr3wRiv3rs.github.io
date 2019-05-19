@@ -99,6 +99,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/set-prototype
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/values.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/values.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/values */ "./node_modules/core-js/library/fn/object/values.js");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js":
 /*!******************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js ***!
@@ -917,6 +928,19 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 
 __webpack_require__(/*! ../../modules/es6.object.set-prototype-of */ "./node_modules/core-js/library/modules/es6.object.set-prototype-of.js");
 module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.setPrototypeOf;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/object/values.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/core-js/library/fn/object/values.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../modules/es7.object.values */ "./node_modules/core-js/library/modules/es7.object.values.js");
+module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.values;
 
 
 /***/ }),
@@ -2703,6 +2727,33 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/modules/_object-to-array.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_object-to-array.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getKeys = __webpack_require__(/*! ./_object-keys */ "./node_modules/core-js/library/modules/_object-keys.js");
+var toIObject = __webpack_require__(/*! ./_to-iobject */ "./node_modules/core-js/library/modules/_to-iobject.js");
+var isEnum = __webpack_require__(/*! ./_object-pie */ "./node_modules/core-js/library/modules/_object-pie.js").f;
+module.exports = function (isEntries) {
+  return function (it) {
+    var O = toIObject(it);
+    var keys = getKeys(O);
+    var length = keys.length;
+    var i = 0;
+    var result = [];
+    var key;
+    while (length > i) if (isEnum.call(O, key = keys[i++])) {
+      result.push(isEntries ? [key, O[key]] : O[key]);
+    } return result;
+  };
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/modules/_parse-int.js":
 /*!************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_parse-int.js ***!
@@ -4276,6 +4327,26 @@ setToStringTag($Symbol, 'Symbol');
 setToStringTag(Math, 'Math', true);
 // 24.3.3 JSON[@@toStringTag]
 setToStringTag(global.JSON, 'JSON', true);
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/es7.object.values.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/es7.object.values.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// https://github.com/tc39/proposal-object-values-entries
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var $values = __webpack_require__(/*! ./_object-to-array */ "./node_modules/core-js/library/modules/_object-to-array.js")(false);
+
+$export($export.S, 'Object', {
+  values: function values(it) {
+    return $values(it);
+  }
+});
 
 
 /***/ }),
@@ -10025,22 +10096,25 @@ module.exports = function(module) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _default; });
-/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/get-iterator */ "./node_modules/@babel/runtime-corejs2/core-js/get-iterator.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/values */ "./node_modules/@babel/runtime-corejs2/core-js/object/values.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/get-iterator */ "./node_modules/@babel/runtime-corejs2/core-js/get-iterator.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _index_sass__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./index.sass */ "./pages/projects/index.sass");
 /* harmony import */ var _index_sass__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_index_sass__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _projects_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../projects.js */ "./projects.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_11__);
+
 
 
 
@@ -10056,7 +10130,7 @@ var _jsxFileName = "D:\\webdev\\poisonapple\\pages\\projects\\index.js";
 
 var Screenshots = function Screenshots(props) {
   return props.project.screenshots ? props.project.screenshots.map(function (screenshot) {
-    return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
       key: 'screenshot-' + screenshot + props.keyAddition || false,
       className: _index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.screenshot,
       style: {
@@ -10073,7 +10147,7 @@ var Screenshots = function Screenshots(props) {
 
 var Links = function Links(props) {
   return props.project.links ? props.project.links.map(function (link) {
-    return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+    return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
       key: link.url,
       type: link.type,
       target: "_blank",
@@ -10092,14 +10166,14 @@ var Links = function Links(props) {
 };
 
 var Handles = function Handles(props) {
-  return props.project.handles ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+  return props.project.handles ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 38
     },
     __self: this
   }, props.project.handles.map(function (handle) {
-    return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+    return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
       key: handle.value,
       type: handle.type,
       target: "_blank",
@@ -10125,7 +10199,7 @@ var Description = function Description(props) {
   for (var i = 0; i < description.length; i++) {
     description[i] = " ".concat(description[i], " ");
     var link = /(\[[^\[\]]+\])(\([^\(\)]+\))/g.exec(description[i]);
-    if (link !== null) description[i] = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+    if (link !== null) description[i] = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
       key: link[2],
       className: _index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.link,
       target: "_blank",
@@ -10138,7 +10212,7 @@ var Description = function Description(props) {
     }, link[1].replace(/(\[|\])/g, ''));
   }
 
-  return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+  return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("p", {
     key: description,
     className: _index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.description,
     __source: {
@@ -10152,15 +10226,15 @@ var Description = function Description(props) {
 var _default =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(_default, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__["default"])(_default, _React$Component);
 
   function _default() {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, _default);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, _default);
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(_default).apply(this, arguments));
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(_default).apply(this, arguments));
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(_default, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(_default, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this = this;
@@ -10178,7 +10252,7 @@ function (_React$Component) {
           }, 16.6);
         };
 
-        for (var _iterator = _babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_1___default()(elements), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        for (var _iterator = _babel_runtime_corejs2_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_2___default()(elements), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           _loop();
         }
       } catch (err) {
@@ -10202,22 +10276,22 @@ function (_React$Component) {
       var _screenshots$children = screenshots.children[0],
           top = _screenshots$children.style.top,
           clientHeight = _screenshots$children.clientHeight;
-      top = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(top || 0) - 1;
+      top = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(top || 0) - 1;
       if (top * -1 >= clientHeight / 2) top = 0;
       screenshots.children[0].style.top = top + 'px';
     }
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: _index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.projects,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 110
         },
         __self: this
-      }, _projects_js__WEBPACK_IMPORTED_MODULE_10__["default"].map(function (project) {
-        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0___default()(_projects_js__WEBPACK_IMPORTED_MODULE_10__["default"]).map(function (project) {
+        return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           key: project.id,
           className: "".concat(_index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.project),
           style: {
@@ -10228,89 +10302,109 @@ function (_React$Component) {
             lineNumber: 113
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 120
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           className: _index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.screenshots,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 121
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_11___default.a, {
+          href: "projects/gallery?id=".concat(project.id),
           __source: {
             fileName: _jsxFileName,
             lineNumber: 122
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Screenshots, {
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 125
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Screenshots, {
           project: project,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 123
+            lineNumber: 126
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Screenshots, {
+        }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Screenshots, {
           project: project,
           keyAddition: "0",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 124
+            lineNumber: 127
           },
           __self: this
-        }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        })))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           className: _index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.info,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 128
+            lineNumber: 132
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 129
+            lineNumber: 133
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h2", {
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h2", {
           className: _index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.title,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 130
-          },
-          __self: this
-        }, project.title), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Links, {
-          project: project,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 131
-          },
-          __self: this
-        })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Handles, {
-          project: project,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 134
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Description, {
+        }, project.title), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Links, {
           project: project,
-          description: project.description,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 135
           },
           __self: this
-        }))));
+        })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Handles, {
+          project: project,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 138
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Description, {
+          project: project,
+          description: project.description,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 139
+          },
+          __self: this
+        }), project.screenshots ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_11___default.a, {
+          href: "projects/gallery?id=".concat(project.id),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 142
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 145
+          },
+          __self: this
+        }, "View Gallery")) : '')));
       }));
     }
   }]);
 
   return _default;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_8___default.a.Component);
 
 
 
@@ -10325,180 +10419,187 @@ function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ([{
-  title: "Corgi Stack 3D",
-  id: "corgi_stack_3d",
-  description: "\n            Sequel to [my entry](https://jams.gamejolt.io/corgsmas/games/corgi-stack/218872) for the [Corgsmas](https://jams.gamejolt.io/corgsmas/games) game jam, Corgi Stack 3D is a \n            reimagined puzzle-platformer which uses cute dogs as moving platforms.\n        ",
-  screenshots: [1, 2, 3, 4, 5, 6],
-  handles: [{
-    type: "twitter",
-    value: "Andr3wRiv3rs"
-  }, {
-    type: "instagram",
-    value: "elgynjir"
-  }],
-  links: [{
-    type: "gamejolt",
-    url: "https://gamejolt.com/games/corgi-stack-3d/371101"
-  }, {
-    type: "github",
-    url: "https://github.com/Andr3wRiv3rs/Corgi-Stack-3D"
-  }, {
-    type: "discord",
-    url: "https://discord.gg/taqbtNn"
-  }]
-}, {
-  title: "Kismet",
-  id: "kismet",
-  description: "An unannounced surreal horror project.",
-  screenshots: [1, 2, 3, 4, 5],
-  handles: [{
-    type: "twitter",
-    value: "Andr3wRiv3rs"
-  }, {
-    type: "twitter",
-    value: "PinkMayoMusic"
-  }, {
-    type: "twitter",
-    value: "AnonMaGames"
-  }, {
-    type: "gamejolt",
-    value: "anthonyme00"
-  }],
-  links: []
-}, {
-  title: "YaaiiA",
-  id: "yaaiia",
-  description: "\n            Short for \"Yet another alien invasion in Atlanta\", \n            this was an entry for the [Dreamhack Atlanta 2018](https://jams.gamejolt.io/dhjam) game jam, developed in Unity.\n        ",
-  screenshots: [1, 2, 3, 4, 5],
-  handles: [{
-    type: "twitter",
-    value: "Andr3wRiv3rs"
-  }, {
-    type: "gamejolt",
-    value: "anthonyme00"
-  }, {
-    type: "twitter",
-    value: "twpunkster"
-  }],
-  links: [{
-    type: "gamejolt",
-    url: "https://gamejolt.com/games/yaaiia/377383"
-  }]
-}, {
-  title: "Devcord Challenges",
-  id: "devcord_challenges",
-  description: "\n            A community driven coding challenge app, \n            built in Nuxt.js by myself for the Devcord community.\n        ",
-  links: [{
-    type: "devcord",
-    url: "https://challenge.devcord.com"
-  }, {
-    type: "discord",
-    url: "https://discord.gg/EhTaURr"
-  }]
-}, {
-  title: "CSS Only Chatroom",
-  id: "css_only_chatroom",
-  description: "\n            An asynchronous chatroom with the frontend built in all HTML/CSS, \n            made for the very first Devcord Challenges challenge.\n        ",
-  links: [{
-    type: 'github',
-    url: 'https://github.com/Andr3wRiv3rs/css-only-chatroom'
-  }]
-}, {
-  title: "Mere Mercy",
-  id: "mere_mercy",
-  description: "Mere Mercy is a Zombie Survival game for Android, built in Unity.",
-  screenshots: [],
-  handles: [{
-    type: "twitter",
-    value: "TheAtheistSheep"
-  }, {
-    type: "twitter",
-    value: "Andr3wRiv3rs"
-  }, {
-    type: "twitter",
-    value: "DablTrabl2"
-  }, {
-    type: "twitter",
-    value: "MikeyBoyii"
-  }, {
-    type: "instagram",
-    value: "evanrossney"
-  }],
-  links: []
-}, {
-  title: "Malus",
-  id: "malus",
-  description: "\n            A UPnP portmapper, built using [my wrapper](https://www.npmjs.com/package/nat-upnp-wrapper) \n            for the [nat-upnp](https://www.npmjs.com/package/nat-upnp) module.\n        ",
-  links: [{
-    type: "github",
-    url: "https://github.com/Andr3wRiv3rs/port-mapper"
-  }]
-}, {
-  title: "Twilight Punkster Galaxy",
-  id: "twilightpunkster",
-  description: "\n            Worked on the MMORPG \"Twilight Punkster Galaxy\" \n            as a fullstack web developer, using Express and Vue.js.\n        ",
-  screenshots: [],
-  links: [{
-    type: "medium",
-    url: "https://medium.com/@twpunkster/twilight-punkster-651cf3a52954"
-  }, {
-    type: "twitter",
-    url: "https://twitter.com/twpunkster"
-  }]
-}, {
-  title: "Stardust",
-  id: "stardust",
-  description: "Briefly worked with [Stardust](https://www.stardust.gg/)'s blockchain technologies, building a client in Electron.",
-  screenshots: [],
-  links: [],
-  left: true
-}, {
-  title: "Cherry",
-  id: "cherry",
-  description: "My chatbot built in Node.js with Discord.js. Cherry is capable of playing music, giving definitions, and automating color roles among other things.",
-  screenshots: [],
-  links: [{
-    type: "discord",
-    url: "https://discordapp.com/api/oauth2/authorize?client_id=443491966576230400&permissions=8&scope=bot"
-  }, {
-    type: "github",
-    url: "https://github.com/Andr3wRiv3rs/Cherry"
-  }],
-  left: true
-}, {
-  title: "Untitled Worm I/O",
-  id: "worm_io",
-  description: "A Slither.io inspired project, utilizing cryptocurrency as a driving mechanic.",
-  screenshots: [],
-  links: [{
-    type: "github",
-    url: "https://github.com/Andr3wRiv3rs/worm-io"
-  }]
-}, {
-  title: "Shh",
-  id: "shh",
-  description: "A Peer to peer encrypted chat client built in Electron with WebRTC and WebSockets.",
-  screenshots: [],
-  links: [{
-    type: "github",
-    url: "https://github.com/Andr3wRiv3rs/Shh-Client"
-  }],
-  left: true
-}, {
-  title: "Bearmon",
-  id: "bearmon",
-  description: "An online multiplayer turn based RPG for the 2017 Bear Week jam on Game Jolt.",
-  screenshots: [],
-  links: [{
-    type: "gamejolt",
-    url: "https://gamejolt.com/games/bearmon/276536"
-  }, {
-    type: "github",
-    url: "https://github.com/Andr3wRiv3rs/bearmon-2017"
-  }],
-  left: true
-}]);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  corgi_stack_3d: {
+    title: "Corgi Stack 3D",
+    id: "corgi_stack_3d",
+    description: "\n            Sequel to [my entry](https://jams.gamejolt.io/corgsmas/games/corgi-stack/218872) for the [Corgsmas](https://jams.gamejolt.io/corgsmas/games) game jam, Corgi Stack 3D is a \n            reimagined puzzle-platformer which uses cute dogs as moving platforms.\n        ",
+    screenshots: [1, 2, 3, 4, 5, 6],
+    handles: [{
+      type: "twitter",
+      value: "Andr3wRiv3rs"
+    }, {
+      type: "instagram",
+      value: "elgynjir"
+    }],
+    links: [{
+      type: "gamejolt",
+      url: "https://gamejolt.com/games/corgi-stack-3d/371101"
+    }, {
+      type: "github",
+      url: "https://github.com/Andr3wRiv3rs/Corgi-Stack-3D"
+    }, {
+      type: "discord",
+      url: "https://discord.gg/taqbtNn"
+    }]
+  },
+  kismet: {
+    title: "Kismet",
+    id: "kismet",
+    description: "An unannounced surreal horror project.",
+    screenshots: [1, 2, 3, 4, 5],
+    handles: [{
+      type: "twitter",
+      value: "Andr3wRiv3rs"
+    }, {
+      type: "twitter",
+      value: "PinkMayoMusic"
+    }, {
+      type: "twitter",
+      value: "AnonMaGames"
+    }, {
+      type: "gamejolt",
+      value: "anthonyme00"
+    }],
+    links: []
+  },
+  yaaiia: {
+    title: "YaaiiA",
+    id: "yaaiia",
+    description: "\n            Short for \"Yet another alien invasion in Atlanta\", \n            this was an entry for the [Dreamhack Atlanta 2018](https://jams.gamejolt.io/dhjam) game jam, developed in Unity.\n        ",
+    screenshots: [1, 2, 3, 4, 5],
+    handles: [{
+      type: "twitter",
+      value: "Andr3wRiv3rs"
+    }, {
+      type: "gamejolt",
+      value: "anthonyme00"
+    }, {
+      type: "twitter",
+      value: "twpunkster"
+    }],
+    links: [{
+      type: "gamejolt",
+      url: "https://gamejolt.com/games/yaaiia/377383"
+    }]
+  },
+  devcord_challenges: {
+    title: "Devcord Challenges",
+    id: "devcord_challenges",
+    description: "\n            A community driven coding challenge app, \n            built in Nuxt.js by myself for the Devcord community.\n        ",
+    links: [{
+      type: "devcord",
+      url: "https://challenge.devcord.com"
+    }, {
+      type: "discord",
+      url: "https://discord.gg/EhTaURr"
+    }]
+  },
+  css_only_chatroom: {
+    title: "CSS Only Chatroom",
+    id: "css_only_chatroom",
+    description: "\n            An asynchronous chatroom with the frontend built in all HTML/CSS, \n            made for the very first Devcord Challenges challenge.\n        ",
+    links: [{
+      type: 'github',
+      url: 'https://github.com/Andr3wRiv3rs/css-only-chatroom'
+    }]
+  },
+  mere_mercy: {
+    title: "Mere Mercy",
+    id: "mere_mercy",
+    description: "Mere Mercy is a Zombie Survival game for Android, built in Unity.",
+    handles: [{
+      type: "twitter",
+      value: "TheAtheistSheep"
+    }, {
+      type: "twitter",
+      value: "Andr3wRiv3rs"
+    }, {
+      type: "twitter",
+      value: "DablTrabl2"
+    }, {
+      type: "twitter",
+      value: "MikeyBoyii"
+    }, {
+      type: "instagram",
+      value: "evanrossney"
+    }],
+    links: []
+  },
+  malus: {
+    title: "Malus",
+    id: "malus",
+    description: "\n            A UPnP portmapper, built using [my wrapper](https://www.npmjs.com/package/nat-upnp-wrapper) \n            for the [nat-upnp](https://www.npmjs.com/package/nat-upnp) module.\n        ",
+    links: [{
+      type: "github",
+      url: "https://github.com/Andr3wRiv3rs/port-mapper"
+    }]
+  },
+  twilightpunkster: {
+    title: "Twilight Punkster Galaxy",
+    id: "twilightpunkster",
+    description: "\n            Worked on the MMORPG \"Twilight Punkster Galaxy\" \n            as a fullstack web developer, using Express and Vue.js.\n        ",
+    links: [{
+      type: "medium",
+      url: "https://medium.com/@twpunkster/twilight-punkster-651cf3a52954"
+    }, {
+      type: "twitter",
+      url: "https://twitter.com/twpunkster"
+    }]
+  },
+  stardust: {
+    title: "Stardust",
+    id: "stardust",
+    description: "Briefly worked with [Stardust](https://www.stardust.gg/)'s blockchain technologies, building a client in Electron.",
+    links: [],
+    left: true
+  },
+  cherry: {
+    title: "Cherry",
+    id: "cherry",
+    description: "My chatbot built in Node.js with Discord.js. Cherry is capable of playing music, giving definitions, and automating color roles among other things.",
+    links: [{
+      type: "discord",
+      url: "https://discordapp.com/api/oauth2/authorize?client_id=443491966576230400&permissions=8&scope=bot"
+    }, {
+      type: "github",
+      url: "https://github.com/Andr3wRiv3rs/Cherry"
+    }],
+    left: true
+  },
+  worm_io: {
+    title: "Untitled Worm I/O",
+    id: "worm_io",
+    description: "A Slither.io inspired project, utilizing cryptocurrency as a driving mechanic.",
+    links: [{
+      type: "github",
+      url: "https://github.com/Andr3wRiv3rs/worm-io"
+    }]
+  },
+  shh: {
+    title: "Shh",
+    id: "shh",
+    description: "A Peer to peer encrypted chat client built in Electron with WebRTC and WebSockets.",
+    links: [{
+      type: "github",
+      url: "https://github.com/Andr3wRiv3rs/Shh-Client"
+    }],
+    left: true
+  },
+  bearmon: {
+    title: "Bearmon",
+    id: "bearmon",
+    description: "An online multiplayer turn based RPG for the 2017 Bear Week jam on Game Jolt.",
+    links: [{
+      type: "gamejolt",
+      url: "https://gamejolt.com/games/bearmon/276536"
+    }, {
+      type: "github",
+      url: "https://github.com/Andr3wRiv3rs/bearmon-2017"
+    }],
+    left: true
+  }
+});
 
 /***/ }),
 

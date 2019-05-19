@@ -72375,7 +72375,7 @@ function (_React$Component) {
       var _componentDidMount = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
       /*#__PURE__*/
       _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var container, fbx, scene, composer, camera, hemisphere, sun, ambient, pointlight, pointlightBack, plane, apple, scanlineEffect, noiseEffect, effectPass, clock, animate;
+        var container, fbx, scene, composer, camera, hemisphere, sun, ambient, pointlight, pointlightBack, plane, apple, scanlineEffect, noiseEffect, chromaticAberrationEffect, effectPass, clock, animate;
         return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -72435,9 +72435,17 @@ function (_React$Component) {
                 noiseEffect = new postprocessing__WEBPACK_IMPORTED_MODULE_12__["NoiseEffect"]({
                   blendFunction: postprocessing__WEBPACK_IMPORTED_MODULE_12__["BlendFunction"].COLOR_DODGE
                 });
+                chromaticAberrationEffect = new postprocessing__WEBPACK_IMPORTED_MODULE_12__["ChromaticAberrationEffect"]({
+                  offset: new three__WEBPACK_IMPORTED_MODULE_11__["Vector2"](0, 0)
+                }); // window.addEventListener('mousemove', event => {
+                //     const { clientX, clientY } = event
+                //     chromaticAberrationEffect.offset.x = (clientX - (window.innerWidth/2)) * -0.000018
+                //     chromaticAberrationEffect.offset.y = (clientY - (window.innerHeight/2)) * -0.000022
+                // })
+
                 scanlineEffect.blendMode.opacity.value = 0.02;
                 noiseEffect.blendMode.opacity.value = 0.08;
-                effectPass = new postprocessing__WEBPACK_IMPORTED_MODULE_12__["EffectPass"](camera, scanlineEffect, noiseEffect);
+                effectPass = new postprocessing__WEBPACK_IMPORTED_MODULE_12__["EffectPass"](camera, scanlineEffect, noiseEffect, chromaticAberrationEffect);
                 effectPass.renderToScreen = true;
                 composer.addPass(new postprocessing__WEBPACK_IMPORTED_MODULE_12__["RenderPass"](scene, camera));
                 composer.addPass(effectPass);
@@ -72454,7 +72462,7 @@ function (_React$Component) {
                 }, 20);
                 document.querySelector(".".concat(_index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.background)).appendChild(composer.renderer.domElement);
 
-              case 41:
+              case 42:
               case "end":
                 return _context.stop();
             }
@@ -72480,26 +72488,26 @@ function (_React$Component) {
           href: '/' + i.toLowerCase(),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 116
+            lineNumber: 129
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 117
+            lineNumber: 130
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h3", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 118
+            lineNumber: 131
           },
           __self: this
         }, i), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("img", {
           src: "static/icons/".concat(i.toLowerCase(), ".svg"),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 118
+            lineNumber: 131
           },
           __self: this
         }))));
@@ -72509,7 +72517,7 @@ function (_React$Component) {
         className: _index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.navigation,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 136
         },
         __self: this
       }, html);
@@ -72521,35 +72529,56 @@ function (_React$Component) {
         className: _index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.home,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 141
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: _index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.background,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 142
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 143
         },
         __self: this
       }, "Andres", react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 143
         },
         __self: this
       }), "Sweeney-", react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 143
         },
         __self: this
-      }), "Rios"), this.nav());
+      }), "Rios"), this.nav(), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: _index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.powered_by,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 145
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("img", {
+        src: "/static/icons/nextjs.svg",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 146
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("img", {
+        src: "/static/icons/threejs.svg",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 147
+        },
+        __self: this
+      })));
     }
   }]);
 
@@ -72560,7 +72589,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 6:
 /*!***************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=D%3A%5Cwebdev%5Cpoisonapple%5Cpages%5Cindex.js ***!
   \***************************************************************************************************************/
@@ -72583,5 +72612,5 @@ module.exports = dll_afa7b25a60452594c240;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js","styles"]]]);
+},[[6,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map
