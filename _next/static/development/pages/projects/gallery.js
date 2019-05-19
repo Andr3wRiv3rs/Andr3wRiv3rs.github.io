@@ -8983,18 +8983,18 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      if (this.props.router.query.id && _projects_js__WEBPACK_IMPORTED_MODULE_8__["default"][this.props.router.query.id] && _projects_js__WEBPACK_IMPORTED_MODULE_8__["default"][this.props.router.query.id].screenshots) return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: _index_sass__WEBPACK_IMPORTED_MODULE_7___default.a.gallery,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 30
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: _index_sass__WEBPACK_IMPORTED_MODULE_7___default.a.selector,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 31
         },
         __self: this
       }, _projects_js__WEBPACK_IMPORTED_MODULE_8__["default"][this.props.router.query.id].screenshots.map(function (screenshot) {
@@ -9008,7 +9008,7 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 31
+            lineNumber: 35
           },
           __self: this
         });
@@ -9016,7 +9016,7 @@ function (_React$Component) {
         className: _index_sass__WEBPACK_IMPORTED_MODULE_7___default.a.viewport,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 54
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -9025,17 +9025,23 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 55
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
         src: "/static/projects/".concat(this.props.router.query.id, "/screenshots/").concat(_projects_js__WEBPACK_IMPORTED_MODULE_8__["default"][this.props.router.query.id].screenshots[this.state.index], ".png"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 65
         },
         __self: this
-      })));
+      })));else return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79
+        },
+        __self: this
+      }, "Invalid project ID.");
     }
   }]);
 
@@ -9237,7 +9243,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fprojects%2Fgallery&absolutePagePath=D%3A%5Cwebdev%5Cpoisonapple%5Cpages%5Cprojects%5Cgallery%5Cindex.js ***!
   \******************************************************************************************************************************************************/
@@ -9260,5 +9266,5 @@ module.exports = dll_afa7b25a60452594c240;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js","styles"]]]);
+},[[1,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=gallery.js.map
