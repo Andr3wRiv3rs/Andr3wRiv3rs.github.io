@@ -72625,6 +72625,43 @@ function (_React$Component) {
           __self: this
         }));
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: _index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.powered_by,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 186
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        href: "https://nextjs.org/",
+        target: "_blank",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 187
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("img", {
+        src: "/static/icons/nextjs.svg",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 191
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        href: "https://threejs.org/",
+        target: "_blank",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 193
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("img", {
+        src: "/static/icons/threejs.svg",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 197
+        },
+        __self: this
+      }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: _index_sass__WEBPACK_IMPORTED_MODULE_9___default.a.contact,
         __source: {
           fileName: _jsxFileName,
@@ -72844,7 +72881,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 6:
 /*!***************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=D%3A%5Cwebdev%5Cpoisonapple%5Cpages%5Cindex.js ***!
   \***************************************************************************************************************/
@@ -72867,5 +72904,5 @@ module.exports = dll_afa7b25a60452594c240;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js","styles"]]]);
+},[[6,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

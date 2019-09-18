@@ -10443,6 +10443,16 @@ __webpack_require__.r(__webpack_exports__);
       url: "https://discord.gg/taqbtNn"
     }]
   },
+  firefight: {
+    title: "Firefig.ht",
+    id: 'firefight',
+    screenshots: [1, 2, 3, 1, 2, 3],
+    description: "\n            Built a custom Minecraft launcher for [Firefig.ht](https://https://firefig.ht/) in Vue.js.\n        ",
+    links: [{
+      type: "github",
+      url: "https://github.com/AeternumIndustries/firefight-releases/releases"
+    }]
+  },
   kismet: {
     title: "Kismet",
     id: "kismet",
@@ -10462,6 +10472,25 @@ __webpack_require__.r(__webpack_exports__);
       value: "anthonyme00"
     }],
     links: []
+  },
+  malus: {
+    title: "Malus",
+    id: "malus",
+    description: "\n            A UPnP portmapper, built using [my wrapper](https://www.npmjs.com/package/nat-upnp-wrapper) \n            for the [nat-upnp](https://www.npmjs.com/package/nat-upnp) module.\n        ",
+    links: [{
+      type: "github",
+      url: "https://github.com/Andr3wRiv3rs/port-mapper"
+    }]
+  },
+  simple_webrtc: {
+    title: "Simple WebRTC",
+    id: "simple_webrtc",
+    description: "\n            A library written in JavaScript aimed at making WebRTC dead simple.\n        ",
+    links: [{
+      type: "github",
+      url: "https://github.com/Andr3wRiv3rs/simple_webrtc"
+    }],
+    left: true
   },
   yaaiia: {
     title: "YaaiiA",
@@ -10483,27 +10512,38 @@ __webpack_require__.r(__webpack_exports__);
       url: "https://gamejolt.com/games/yaaiia/377383"
     }]
   },
-  devcord_challenges: {
-    title: "Devcord Challenges",
-    id: "devcord_challenges",
-    description: "\n            A community driven coding challenge app, \n            built in Nuxt.js by myself for the Devcord community.\n        ",
-    links: [{
-      type: "devcord",
-      url: "https://challenge.devcord.com"
-    }, {
-      type: "discord",
-      url: "https://discord.gg/EhTaURr"
-    }]
-  },
-  css_only_chatroom: {
-    title: "CSS Only Chatroom",
-    id: "css_only_chatroom",
-    description: "\n            An asynchronous chatroom with the frontend built in all HTML/CSS, \n            made for the very first Devcord Challenges challenge.\n        ",
-    links: [{
-      type: 'github',
-      url: 'https://github.com/Andr3wRiv3rs/css-only-chatroom'
-    }]
-  },
+  // devcord_challenges: {
+  //     title: "Devcord Challenges",
+  //     id: "devcord_challenges",
+  //     description: `
+  //         A community driven coding challenge app, 
+  //         built in Nuxt.js by myself for the Devcord community.
+  //     `,
+  //     links: [
+  //         {
+  //             type: "devcord",
+  //             url: "https://challenge.devcord.com"
+  //         },
+  //         {
+  //             type: "discord",
+  //             url: "https://discord.gg/EhTaURr"
+  //         }
+  //     ],
+  // },
+  // css_only_chatroom: {
+  //     title: "CSS Only Chatroom",
+  //     id: "css_only_chatroom",
+  //     description: `
+  //         An asynchronous chatroom with the frontend built in all HTML/CSS, 
+  //         made for the very first Devcord Challenges challenge.
+  //     `,
+  //     links: [
+  //         {
+  //             type: 'github',
+  //             url: 'https://github.com/Andr3wRiv3rs/css-only-chatroom'
+  //         }
+  //     ]
+  // },
   mere_mercy: {
     title: "Mere Mercy",
     id: "mere_mercy",
@@ -10525,15 +10565,6 @@ __webpack_require__.r(__webpack_exports__);
       value: "evanrossney"
     }],
     links: []
-  },
-  malus: {
-    title: "Malus",
-    id: "malus",
-    description: "\n            A UPnP portmapper, built using [my wrapper](https://www.npmjs.com/package/nat-upnp-wrapper) \n            for the [nat-upnp](https://www.npmjs.com/package/nat-upnp) module.\n        ",
-    links: [{
-      type: "github",
-      url: "https://github.com/Andr3wRiv3rs/port-mapper"
-    }]
   },
   twilightpunkster: {
     title: "Twilight Punkster Galaxy",
@@ -10603,7 +10634,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 6:
+/***/ 1:
 /*!**********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fprojects&absolutePagePath=D%3A%5Cwebdev%5Cpoisonapple%5Cpages%5Cprojects%5Cindex.js ***!
   \**********************************************************************************************************************************/
@@ -10626,5 +10657,5 @@ module.exports = dll_afa7b25a60452594c240;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js","styles"]]]);
+},[[1,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=projects.js.map
